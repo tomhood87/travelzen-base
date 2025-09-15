@@ -1,41 +1,41 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getRouterParam, getResponseStatusText } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getRouterParam, getResponseStatusText } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
-import { escapeHtml } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/@vue/shared/dist/shared.cjs.js';
-import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/ufo/dist/index.mjs';
-import destr, { destr as destr$1 } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/destr/dist/index.mjs';
-import { createHooks } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/hookable/dist/index.mjs';
-import { createFetch, Headers as Headers$1 } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/ofetch/dist/node.mjs';
-import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/node-mock-http/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/unstorage/drivers/fs.mjs';
-import { digest } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/ohash/dist/index.mjs';
-import { klona } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/klona/dist/index.mjs';
-import defu, { defuFn } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/defu/dist/defu.mjs';
-import { snakeCase } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/scule/dist/index.mjs';
-import { getContext } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/unctx/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/radix3/dist/index.mjs';
+import { escapeHtml } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/@vue/shared/dist/shared.cjs.js';
+import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/ufo/dist/index.mjs';
+import destr, { destr as destr$1 } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/destr/dist/index.mjs';
+import { createHooks } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/hookable/dist/index.mjs';
+import { createFetch, Headers as Headers$1 } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/ofetch/dist/node.mjs';
+import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/node-mock-http/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/unstorage/drivers/fs.mjs';
+import { digest } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/ohash/dist/index.mjs';
+import { klona } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/klona/dist/index.mjs';
+import defu, { defuFn } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/defu/dist/defu.mjs';
+import { snakeCase } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/scule/dist/index.mjs';
+import { getContext } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/unctx/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/radix3/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
-import consola, { consola as consola$1 } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/consola/dist/index.mjs';
-import { ErrorParser } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/youch-core/build/index.js';
-import { Youch } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/nitropack/node_modules/youch/build/index.js';
-import { SourceMapConsumer } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/source-map/source-map.js';
+import consola, { consola as consola$1 } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/consola/dist/index.mjs';
+import { ErrorParser } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/youch-core/build/index.js';
+import { Youch } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/nitropack/node_modules/youch/build/index.js';
+import { SourceMapConsumer } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/source-map/source-map.js';
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { stringify, uneval } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/devalue/index.js';
-import { captureRawStackTrace, parseRawStackTrace } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/errx/dist/index.js';
-import { isVNode, toValue, isRef } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/vue/index.mjs';
+import { stringify, uneval } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/devalue/index.js';
+import { captureRawStackTrace, parseRawStackTrace } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/errx/dist/index.js';
+import { isVNode, toValue, isRef } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/vue/index.mjs';
 import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname as dirname$1, resolve as resolve$1 } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/pathe/dist/index.mjs';
-import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/unhead/dist/server.mjs';
-import { renderToString } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/vue/server-renderer/index.mjs';
-import { walkResolver } from 'file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/node_modules/unhead/dist/utils.mjs';
+import { dirname as dirname$1, resolve as resolve$1 } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/pathe/dist/index.mjs';
+import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/unhead/dist/server.mjs';
+import { renderToString } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/vue/server-renderer/index.mjs';
+import { walkResolver } from 'file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/node_modules/unhead/dist/utils.mjs';
 
-const serverAssets = [{"baseName":"server","dir":"/home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/server/assets"}];
 
 const assets$1 = createStorage();
 
@@ -47,11 +47,11 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets$1);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend","watchOptions":{"ignored":[null]}}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/server","watchOptions":{"ignored":[null]}}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/.nuxt"}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/.nuxt/cache"}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/.data/kv"}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend","watchOptions":{"ignored":[null]}}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/server","watchOptions":{"ignored":[null]}}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/.nuxt"}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/.nuxt/cache"}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/.data/kv"}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -649,7 +649,9 @@ const _inlineRuntimeConfig = {
   "public": {
     "webinyCmsApi": "https://d3p9g2q7rev0gk.cloudfront.net/cms/read/en-GB",
     "webinyCmsApiKey": "a8aeda375855d100b8676989f289692e1c2804ec72d7853f"
-  }
+  },
+  "webinyMainApi": "https://d3p9g2q7rev0gk.cloudfront.net/graphql",
+  "webinyMainApiKey": "a8aeda375855d100b8676989f289692e1c2804ec72d7853f"
 };
 const envOptions = {
   prefix: "NITRO_",
@@ -1019,13 +1021,13 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _BBf02LHyscdVGyuq9nZjFPmdxpq2cvsnfU8zUX27vA = (function(nitro) {
+const _DNUQ_hgdYfDvcQV5CA8QYW9HpZlJB_T96pdMwQSIQ = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
-const rootDir = "/home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend";
+const rootDir = "/home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend";
 
 const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
 
@@ -1048,7 +1050,7 @@ const devReducers = {
   URL: (data) => data instanceof URL ? data.toString() : void 0
 };
 const asyncContext = getContext("nuxt-dev", { asyncContext: true, AsyncLocalStorage });
-const _l3ZAYjoVOIwb_sHY5uyhlT7Bqj5Bpub4e42bwjgi5k = (nitroApp) => {
+const _qWBEXLx2zzDW8FMXpUdqd4CQgzk8ouxwXPDLemVimVg = (nitroApp) => {
   const handler = nitroApp.h3App.handler;
   nitroApp.h3App.handler = (event) => {
     return asyncContext.callAsync({ logs: [], event }, () => handler(event));
@@ -1118,8 +1120,8 @@ function onConsoleLog(callback) {
 }
 
 const plugins = [
-  _BBf02LHyscdVGyuq9nZjFPmdxpq2cvsnfU8zUX27vA,
-_l3ZAYjoVOIwb_sHY5uyhlT7Bqj5Bpub4e42bwjgi5k
+  _DNUQ_hgdYfDvcQV5CA8QYW9HpZlJB_T96pdMwQSIQ,
+_qWBEXLx2zzDW8FMXpUdqd4CQgzk8ouxwXPDLemVimVg
 ];
 
 const assets = {};
@@ -1147,7 +1149,7 @@ function getAsset (id) {
 
 const METHODS = /* @__PURE__ */ new Set(["HEAD", "GET"]);
 const EncodingMap = { gzip: ".gz", br: ".br" };
-const _ANW_sC = eventHandler((event) => {
+const _Ockwbx = eventHandler((event) => {
   if (event.method && !METHODS.has(event.method)) {
     return;
   }
@@ -1280,8 +1282,8 @@ function publicAssetsURL(...path) {
 
 const APP_ROOT_OPEN_TAG = `<${appRootTag}${propsToString(appRootAttrs)}>`;
 const APP_ROOT_CLOSE_TAG = `</${appRootTag}>`;
-const getServerEntry = () => import('file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/.nuxt//dist/server/server.mjs').then((r) => r.default || r);
-const getClientManifest = () => import('file:///home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend/.nuxt//dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getServerEntry = () => import('file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/.nuxt//dist/server/server.mjs').then((r) => r.default || r);
+const getClientManifest = () => import('file:///home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend/.nuxt//dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
 const getSSRRenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();
   if (!manifest) {
@@ -1529,15 +1531,19 @@ async function getIslandContext(event) {
   return ctx;
 }
 
-const _lazy_AyaX_S = () => Promise.resolve().then(function () { return menu_get$1; });
-const _lazy_dGMl9P = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_fxHN3b = () => Promise.resolve().then(function () { return menu_get$1; });
+const _lazy_50Obcq = () => Promise.resolve().then(function () { return model_get$1; });
+const _lazy_NFzJre = () => Promise.resolve().then(function () { return _slug_$1; });
+const _lazy_kS1hU_ = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '', handler: _ANW_sC, lazy: false, middleware: true, method: undefined },
-  { route: '/api/menu', handler: _lazy_AyaX_S, lazy: true, middleware: false, method: "get" },
-  { route: '/__nuxt_error', handler: _lazy_dGMl9P, lazy: true, middleware: false, method: undefined },
+  { route: '', handler: _Ockwbx, lazy: false, middleware: true, method: undefined },
+  { route: '/api/menu', handler: _lazy_fxHN3b, lazy: true, middleware: false, method: "get" },
+  { route: '/api/model', handler: _lazy_50Obcq, lazy: true, middleware: false, method: "get" },
+  { route: '/api/page/:slug', handler: _lazy_NFzJre, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_kS1hU_, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_dGMl9P, lazy: true, middleware: false, method: undefined }
+  { route: '/**', handler: _lazy_kS1hU_, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -1868,7 +1874,95 @@ const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   default: styles
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const menu_get = defineEventHandler(async () => {
+function toSlug(title) {
+  return title.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+}
+function flattenMenu(items, parentPath = "", isRoot = true) {
+  const map = {};
+  items.forEach((item, index) => {
+    if (isRoot && index === 0 && item.type === "page" && item.page) {
+      map[item.id] = {
+        id: item.id,
+        slug: "/",
+        title: item.title,
+        pageId: item.page
+      };
+      return;
+    }
+    if (item.type === "page" && item.page) {
+      const slug = toSlug(item.title);
+      const path = parentPath ? `${parentPath}/${slug}` : `/${slug}`;
+      map[item.id] = {
+        id: item.id,
+        slug: path,
+        title: item.title,
+        pageId: item.page
+      };
+    }
+    if (item.type === "folder" && item.children && item.children.length > 0) {
+      const folderSlug = toSlug(item.title.replace(/folder$/i, "").trim());
+      const folderPath = parentPath ? `${parentPath}/${folderSlug}` : `/${folderSlug}`;
+      const firstChild = item.children[0];
+      if ((firstChild == null ? void 0 : firstChild.page) && firstChild.type === "page") {
+        map[firstChild.id] = {
+          id: firstChild.id,
+          slug: folderPath,
+          // use folder path
+          title: firstChild.title,
+          pageId: firstChild.page
+        };
+      }
+      const remainingChildren = item.children.slice(1);
+      if (remainingChildren.length > 0) {
+        Object.assign(map, flattenMenu(remainingChildren, folderPath, false));
+      }
+    }
+  });
+  return map;
+}
+
+const menu_get = defineEventHandler(async (event) => {
+  var _a, _b, _c, _d;
+  const config = useRuntimeConfig();
+  const slug = "main-menu";
+  const query = `
+    query {
+        pageBuilder {
+            getMenu(slug: "main-menu") {
+              data {
+                createdOn
+                id
+                slug
+                description
+                items
+              }
+            }
+        }
+    }
+  `;
+  try {
+    const res = await $fetch(config.webinyMainApi, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${config.webinyMainApiKey}`
+      },
+      body: { query, variables: { slug } }
+    });
+    const data = ((_d = (_c = (_b = (_a = res == null ? void 0 : res.data) == null ? void 0 : _a.pageBuilder) == null ? void 0 : _b.getMenu) == null ? void 0 : _c.data) == null ? void 0 : _d.items) || [];
+    return flattenMenu(data);
+  } catch (err) {
+    console.error("CMS fetch failed", err);
+    throw createError({ statusCode: 500, statusMessage: "CMS fetch failed" });
+  }
+});
+
+const menu_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: menu_get
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const model_get = defineEventHandler(async () => {
   const config = useRuntimeConfig();
   const query = `
     query {
@@ -1904,9 +1998,64 @@ const menu_get = defineEventHandler(async () => {
   }
 });
 
-const menu_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const model_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
-  default: menu_get
+  default: model_get
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _slug_ = defineEventHandler(async (event) => {
+  var _a, _b;
+  const config = useRuntimeConfig();
+  const slugParam = (_b = (_a = event == null ? void 0 : event.context) == null ? void 0 : _a.params) == null ? void 0 : _b.slug;
+  const path = Array.isArray(slugParam) ? slugParam.map((s) => decodeURIComponent(s).toLowerCase()).join("/") : slugParam ? decodeURIComponent(slugParam).toLowerCase() : "";
+  console.log(path);
+  const flatMenu = await $fetch("http://localhost:3000/api/menu");
+  if (!Object.keys(flatMenu).length) {
+    throw createError({ statusCode: 404, statusMessage: "Menu not found" });
+  }
+  const pathToPageId = {};
+  Object.values(flatMenu).forEach((item) => {
+    const normalizedSlug = item.slug.toLowerCase();
+    pathToPageId[normalizedSlug] = item.pageId;
+  });
+  console.log(pathToPageId);
+  const pageId = pathToPageId[path];
+  console.log(pageId);
+  if (!pageId) {
+    throw createError({ statusCode: 404, statusMessage: "Page not found" });
+  }
+  const query = `
+    query GetPage($id: ID!) {
+      pageBuilder {
+        getPage(id: $id) {
+          data {
+            id
+            title
+            content
+          }
+        }
+      }
+    }
+  `;
+  try {
+    const res = await $fetch(config.webinyMainApi, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${config.webinyMainApiKey}`
+      },
+      body: { query, variables: { id: pageId } }
+    });
+    return res.data.pageBuilder.getPage.data;
+  } catch (err) {
+    console.error("CMS fetch failed", err);
+    throw createError({ statusCode: 500, statusMessage: "CMS fetch failed" });
+  }
+});
+
+const _slug_$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _slug_
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {

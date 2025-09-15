@@ -1,7 +1,7 @@
 {
-  "_hash": "sAUHYLg0GFoXs5-rLCQRiFhqQDG5TXyO0UhfWjR2rDA",
+  "_hash": "CP8t8VU4p_CGQkph9tULZ50DtJRhjJK8PEE6NfN7qeE",
   "project": {
-    "rootDir": "/home/tmh/workspace/github/local/travelzen/travelzen/apps/nuxt-frontend"
+    "rootDir": "/home/tmh/workspace/github/local/travelzen-base/apps/nuxt-frontend"
   },
   "versions": {
     "nuxt": "4.1.1"

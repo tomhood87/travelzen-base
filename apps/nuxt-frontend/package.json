@@ -10,7 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@webiny/app-page-builder-elements": "^5.43.4",
+    "@webiny/theme": "^5.43.4",
     "nuxt": "^4.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "vue": "^3.5.21",
     "vue-router": "^4.5.1"
   }

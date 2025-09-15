@@ -1,0 +1,1 @@
+import{_ as o,c as e,o as t}from"#entry";const r={},c={id:"footer-layout-one",class:"mz-footer"};function n(s,a){return t(),e("footer",c," Footer Layout One ")}const f=o(r,[["render",n]]);export{f as default};

@@ -26,7 +26,7 @@ export default () => [
 
     new FbFormLayoutPlugin({
         name: "default",
-        title: "Default form layout",
+        title: "Default form layouts",
         component: DefaultFormLayout
     })
 ];

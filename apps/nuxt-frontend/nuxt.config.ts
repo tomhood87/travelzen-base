@@ -4,9 +4,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   runtimeConfig: {
+    webinyMainApi: process.env.WEBINY_MAIN_API,
+    webinyMainApiKey: process.env.WEBINY_MAIN_API_KEY,
     public: {
-      webinyCmsApi: process.env.VITE_WEBINY_CMS_API,
-      webinyCmsApiKey: process.env.VITE_WEBINY_CMS_API_KEY
+        webinyCmsApi: process.env.VITE_WEBINY_CMS_API,
+        webinyCmsApiKey: process.env.VITE_WEBINY_CMS_API_KEY
     }
   }
 })

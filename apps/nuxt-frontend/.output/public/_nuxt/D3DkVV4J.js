@@ -1,0 +1,1 @@
+import{_ as o,c as s,a as n,o as t}from"#entry";const a={};function r(l,e){return t(),s("div",null,[...e[0]||(e[0]=[n("h1",null,"Welcome to TravelZen Base",-1),n("p",null,"This is the homepage.",-1)])])}const i=o(a,[["render",r]]);export{i as default};

@@ -37,7 +37,7 @@ const StepTitle = styled.div`
 `;
 
 /**
- * This is the default form layout component, in which we render all the form fields. We also render terms of service
+ * This is the default form layouts component, in which we render all the form fields. We also render terms of service
  * and reCAPTCHA (if enabled in form settings), and, at the very bottom, the submit button.
  *
  * Feel free to use this component as your starting point for your own form layouts.

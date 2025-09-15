@@ -10,6 +10,10 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       cdnURL: string,
    },
 
+   webinyMainApi: string,
+
+   webinyMainApiKey: string,
+
    nitro: {
       envPrefix: string,
    },
