@@ -14,7 +14,20 @@ type HydrationStrategies = {
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 
 interface _GlobalComponents {
-      'PageElementRenderer': typeof import("../../components/PageElementRenderer.vue")['default']
+      'WebinyDefaultLayout': typeof import("../../components/WebinyDefaultLayout.vue")['default']
+    'WebinyElementRenderer': typeof import("../../components/WebinyElementRenderer.vue")['default']
+    'WebinyLayoutRenderer': typeof import("../../components/WebinyLayoutRenderer.vue")['default']
+    'WebinyPageRenderer': typeof import("../../components/WebinyPageRenderer.vue")['default']
+    'WebinyStaticLayout': typeof import("../../components/WebinyStaticLayout.vue")['default']
+    'ElementsWebinyBlockElement': typeof import("../../components/elements/WebinyBlockElement.vue")['default']
+    'ElementsWebinyButtonElement': typeof import("../../components/elements/WebinyButtonElement.vue")['default']
+    'ElementsWebinyCellElement': typeof import("../../components/elements/WebinyCellElement.vue")['default']
+    'ElementsWebinyDocumentElement': typeof import("../../components/elements/WebinyDocumentElement.vue")['default']
+    'ElementsWebinyGridElement': typeof import("../../components/elements/WebinyGridElement.vue")['default']
+    'ElementsWebinyHeadingElement': typeof import("../../components/elements/WebinyHeadingElement.vue")['default']
+    'ElementsWebinyImageElement': typeof import("../../components/elements/WebinyImageElement.vue")['default']
+    'ElementsWebinyParagraphElement': typeof import("../../components/elements/WebinyParagraphElement.vue")['default']
+    'ElementsWebinyUnknownElement': typeof import("../../components/elements/WebinyUnknownElement.vue")['default']
     'NuxtWelcome': typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']
     'NuxtLayout': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
     'NuxtErrorBoundary': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -39,7 +52,20 @@ interface _GlobalComponents {
     'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Body']
     'NuxtIsland': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': typeof import("../../node_modules/nuxt/dist/app/components/server-placeholder")['default']
-      'LazyPageElementRenderer': LazyComponent<typeof import("../../components/PageElementRenderer.vue")['default']>
+      'LazyWebinyDefaultLayout': LazyComponent<typeof import("../../components/WebinyDefaultLayout.vue")['default']>
+    'LazyWebinyElementRenderer': LazyComponent<typeof import("../../components/WebinyElementRenderer.vue")['default']>
+    'LazyWebinyLayoutRenderer': LazyComponent<typeof import("../../components/WebinyLayoutRenderer.vue")['default']>
+    'LazyWebinyPageRenderer': LazyComponent<typeof import("../../components/WebinyPageRenderer.vue")['default']>
+    'LazyWebinyStaticLayout': LazyComponent<typeof import("../../components/WebinyStaticLayout.vue")['default']>
+    'LazyElementsWebinyBlockElement': LazyComponent<typeof import("../../components/elements/WebinyBlockElement.vue")['default']>
+    'LazyElementsWebinyButtonElement': LazyComponent<typeof import("../../components/elements/WebinyButtonElement.vue")['default']>
+    'LazyElementsWebinyCellElement': LazyComponent<typeof import("../../components/elements/WebinyCellElement.vue")['default']>
+    'LazyElementsWebinyDocumentElement': LazyComponent<typeof import("../../components/elements/WebinyDocumentElement.vue")['default']>
+    'LazyElementsWebinyGridElement': LazyComponent<typeof import("../../components/elements/WebinyGridElement.vue")['default']>
+    'LazyElementsWebinyHeadingElement': LazyComponent<typeof import("../../components/elements/WebinyHeadingElement.vue")['default']>
+    'LazyElementsWebinyImageElement': LazyComponent<typeof import("../../components/elements/WebinyImageElement.vue")['default']>
+    'LazyElementsWebinyParagraphElement': LazyComponent<typeof import("../../components/elements/WebinyParagraphElement.vue")['default']>
+    'LazyElementsWebinyUnknownElement': LazyComponent<typeof import("../../components/elements/WebinyUnknownElement.vue")['default']>
     'LazyNuxtWelcome': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
     'LazyNuxtLayout': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
     'LazyNuxtErrorBoundary': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>

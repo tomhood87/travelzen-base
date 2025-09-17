@@ -14,7 +14,20 @@ type HydrationStrategies = {
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 
 
-export const PageElementRenderer: typeof import("../components/PageElementRenderer.vue")['default']
+export const WebinyDefaultLayout: typeof import("../components/WebinyDefaultLayout.vue")['default']
+export const WebinyElementRenderer: typeof import("../components/WebinyElementRenderer.vue")['default']
+export const WebinyLayoutRenderer: typeof import("../components/WebinyLayoutRenderer.vue")['default']
+export const WebinyPageRenderer: typeof import("../components/WebinyPageRenderer.vue")['default']
+export const WebinyStaticLayout: typeof import("../components/WebinyStaticLayout.vue")['default']
+export const ElementsWebinyBlockElement: typeof import("../components/elements/WebinyBlockElement.vue")['default']
+export const ElementsWebinyButtonElement: typeof import("../components/elements/WebinyButtonElement.vue")['default']
+export const ElementsWebinyCellElement: typeof import("../components/elements/WebinyCellElement.vue")['default']
+export const ElementsWebinyDocumentElement: typeof import("../components/elements/WebinyDocumentElement.vue")['default']
+export const ElementsWebinyGridElement: typeof import("../components/elements/WebinyGridElement.vue")['default']
+export const ElementsWebinyHeadingElement: typeof import("../components/elements/WebinyHeadingElement.vue")['default']
+export const ElementsWebinyImageElement: typeof import("../components/elements/WebinyImageElement.vue")['default']
+export const ElementsWebinyParagraphElement: typeof import("../components/elements/WebinyParagraphElement.vue")['default']
+export const ElementsWebinyUnknownElement: typeof import("../components/elements/WebinyUnknownElement.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -39,7 +52,20 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']
-export const LazyPageElementRenderer: LazyComponent<typeof import("../components/PageElementRenderer.vue")['default']>
+export const LazyWebinyDefaultLayout: LazyComponent<typeof import("../components/WebinyDefaultLayout.vue")['default']>
+export const LazyWebinyElementRenderer: LazyComponent<typeof import("../components/WebinyElementRenderer.vue")['default']>
+export const LazyWebinyLayoutRenderer: LazyComponent<typeof import("../components/WebinyLayoutRenderer.vue")['default']>
+export const LazyWebinyPageRenderer: LazyComponent<typeof import("../components/WebinyPageRenderer.vue")['default']>
+export const LazyWebinyStaticLayout: LazyComponent<typeof import("../components/WebinyStaticLayout.vue")['default']>
+export const LazyElementsWebinyBlockElement: LazyComponent<typeof import("../components/elements/WebinyBlockElement.vue")['default']>
+export const LazyElementsWebinyButtonElement: LazyComponent<typeof import("../components/elements/WebinyButtonElement.vue")['default']>
+export const LazyElementsWebinyCellElement: LazyComponent<typeof import("../components/elements/WebinyCellElement.vue")['default']>
+export const LazyElementsWebinyDocumentElement: LazyComponent<typeof import("../components/elements/WebinyDocumentElement.vue")['default']>
+export const LazyElementsWebinyGridElement: LazyComponent<typeof import("../components/elements/WebinyGridElement.vue")['default']>
+export const LazyElementsWebinyHeadingElement: LazyComponent<typeof import("../components/elements/WebinyHeadingElement.vue")['default']>
+export const LazyElementsWebinyImageElement: LazyComponent<typeof import("../components/elements/WebinyImageElement.vue")['default']>
+export const LazyElementsWebinyParagraphElement: LazyComponent<typeof import("../components/elements/WebinyParagraphElement.vue")['default']>
+export const LazyElementsWebinyUnknownElement: LazyComponent<typeof import("../components/elements/WebinyUnknownElement.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
 export const LazyNuxtLayout: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
 export const LazyNuxtErrorBoundary: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>

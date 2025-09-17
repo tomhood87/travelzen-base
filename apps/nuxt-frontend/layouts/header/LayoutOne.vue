@@ -4,7 +4,6 @@ const { data:menu } = await useFetch('/api/menu')
 
 <template>
   <header id="header-layout-one" class="mz-header">
-    {{ menu }}
     <nav>
       <ul>
         <li

@@ -37,6 +37,18 @@ const _slug_ = defineEventHandler(async (event) => {
             id
             title
             content
+            settings {
+              seo {
+                title
+                meta {
+                  content
+                }
+              }
+              general {
+                layout
+                tags
+              }
+            }
           }
         }
       }

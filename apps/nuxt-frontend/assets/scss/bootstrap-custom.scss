@@ -1,0 +1,13 @@
+// Required Bootstrap functions and variables
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Only include the grid + utilities you need
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot"; // optional reset/normalize
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/utilities/api";
