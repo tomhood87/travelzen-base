@@ -33,34 +33,66 @@ const settings = toRef(props, "settings")
 // Extract child elements
 const children = computed(() => element.value.elements || [])
 
+// Mapping helpers
+const mapH: Record<string, string> = {
+  "flex-start": "justify-start",
+  center: "justify-center",
+  "flex-end": "justify-end",
+  "space-between": "justify-between",
+  "space-around": "justify-around",
+  "space-evenly": "justify-evenly"
+}
+
+const mapV: Record<string, string> = {
+  "flex-start": "items-start",
+  center: "items-center",
+  "flex-end": "items-end",
+  stretch: "items-stretch"
+}
+
 // Block CSS classes
 const blockClasses = computed(() => {
-  const classes: string[] = ["flex"]
+  const classes: string[] = ["flex", "flex-col"] // default vertical stacking
 
-  // Horizontal alignment
-  const hAlign = element.value.data?.settings?.horizontalAlignFlex?.desktop
-  if (hAlign) {
-    const map: Record<string, string> = {
-      "flex-start": "justify-start",
-      center: "justify-center",
-      "flex-end": "justify-end",
-      "space-between": "justify-between",
-      "space-around": "justify-around",
-      "space-evenly": "justify-evenly"
-    }
-    if (map[hAlign]) classes.push(map[hAlign])
+  const hAlign = element.value.data?.settings?.horizontalAlignFlex || {}
+  const vAlign = element.value.data?.settings?.verticalAlign || {}
+
+  // Desktop (default)
+  if (hAlign.desktop && mapH[hAlign.desktop]) {
+    classes.push(mapH[hAlign.desktop])
+  }
+  if (vAlign.desktop && mapV[vAlign.desktop]) {
+    classes.push(mapV[vAlign.desktop])
   }
 
-  // Vertical alignment
-  const vAlign = element.value.data?.settings?.verticalAlign?.desktop
-  if (vAlign) {
-    const map: Record<string, string> = {
-      "flex-start": "items-start",
-      center: "items-center",
-      "flex-end": "items-end",
-      stretch: "items-stretch"
-    }
-    if (map[vAlign]) classes.push(map[vAlign])
+  // Tablet (md)
+  if (hAlign.tablet && mapH[hAlign.tablet]) {
+    classes.push("md:" + mapH[hAlign.tablet])
+  }
+  if (vAlign.tablet && mapV[vAlign.tablet]) {
+    classes.push("md:" + mapV[vAlign.tablet])
+  }
+
+  // Mobile landscape (sm)
+  if (hAlign["mobile-landscape"] && mapH[hAlign["mobile-landscape"]]) {
+    classes.push("sm:" + mapH[hAlign["mobile-landscape"]])
+  }
+  if (vAlign["mobile-landscape"] && mapV[vAlign["mobile-landscape"]]) {
+    classes.push("sm:" + mapV[vAlign["mobile-landscape"]])
+  }
+
+  // Mobile (xs)
+  if (hAlign.mobile && mapH[hAlign.mobile]) {
+    classes.push("xs:" + mapH[hAlign.mobile])
+  }
+  if (vAlign.mobile && mapV[vAlign.mobile]) {
+    classes.push("xs:" + mapV[vAlign.mobile])
+  }
+
+  // Center fixed-width blocks
+  const width = element.value.data?.settings?.width?.desktop?.value
+  if (width && width !== "100%") {
+    classes.push("mx-auto")
   }
 
   return classes.join(" ")
@@ -98,6 +130,18 @@ const blockStyles = computed(() => {
     }
   }
 
+  // Background color
+  const bgColor = element.value.data?.settings?.background?.color
+  if (bgColor) styles.backgroundColor = bgColor
+
+  // Background image
+  const bgImage = element.value.data?.settings?.background?.image?.src
+  if (bgImage) {
+    styles.backgroundImage = `url(${bgImage})`
+    styles.backgroundSize = "cover"
+    styles.backgroundPosition = "center"
+  }
+
   return styles
 })
 </script>
@@ -106,6 +150,6 @@ const blockStyles = computed(() => {
 .webiny-block-element {
   width: 100%;
   display: flex;
-  flex-direction: column; /* default so grids/cells stack */
+  flex-direction: column;
 }
 </style>

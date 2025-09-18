@@ -1,54 +1,29 @@
 <template>
-  <div
-    v-if="shouldRender"
-    :class="elementClasses"
-    :style="elementStyles"
-  >
-    <component
-      :is="elementComponent"
-      v-bind="elementProps"
-    />
-  </div>
+  <component :is="elementComponent" v-bind="elementProps" />
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, toRef } from "vue"
 
-// Import concrete components and map by element type
-import WebinyDocumentElement from "./elements/WebinyDocumentElement.vue";
-import WebinyBlockElement from "./elements/WebinyBlockElement.vue";
-import WebinyParagraphElement from "./elements/WebinyParagraphElement.vue";
-import WebinyHeadingElement from "./elements/WebinyHeadingElement.vue";
-import WebinyImageElement from "./elements/WebinyImageElement.vue";
-import WebinyGridElement from "./elements/WebinyGridElement.vue";
-import WebinyCellElement from "./elements/WebinyCellElement.vue";
-import WebinyButtonElement from "./elements/WebinyButtonElement.vue";
-import WebinyUnknownElement from "./elements/WebinyUnknownElement.vue";
+// Import components
+import WebinyDocumentElement from "./elements/WebinyDocumentElement.vue"
+import WebinyBlockElement from "./elements/WebinyBlockElement.vue"
+import WebinyParagraphElement from "./elements/WebinyParagraphElement.vue"
+import WebinyHeadingElement from "./elements/WebinyHeadingElement.vue"
+import WebinyImageElement from "./elements/WebinyImageElement.vue"
+import WebinyGridElement from "./elements/WebinyGridElement.vue"
+import WebinyCellElement from "./elements/WebinyCellElement.vue"
+import WebinyButtonElement from "./elements/WebinyButtonElement.vue"
+import WebinyUnknownElement from "./elements/WebinyUnknownElement.vue"
 
 const props = defineProps({
-  element: {
-    type: Object,
-    required: true
-  },
-  isRoot: {
-    type: Boolean,
-    default: false
-  }
-});
+  element: { type: Object, required: true },
+  isRoot: { type: Boolean, default: false }
+})
 
-// Element visibility check
-const shouldRender = computed(() => {
-  if (!props.element) return false;
+const element = toRef(props, "element")
 
-  const visibility = props.element.data?.settings?.visibility;
-  if (visibility === false || visibility === "hidden") {
-    return false;
-  }
-
-  return true;
-});
-
-// Dynamic component resolution based on element type
+// Registry
 const registry = {
   document: WebinyDocumentElement,
   block: WebinyBlockElement,
@@ -58,91 +33,96 @@ const registry = {
   image: WebinyImageElement,
   grid: WebinyGridElement,
   cell: WebinyCellElement
-};
+}
 
+// Visibility
+const shouldRender = computed(() => {
+  const visibility = element.value.data?.settings?.visibility
+  return !(visibility === false || visibility === "hidden")
+})
+
+// Component
 const elementComponent = computed(() => {
-  const elementType = props?.element?.type || "unknown";
-  return registry[elementType] || WebinyUnknownElement;
-});
+  const type = element.value?.type || "unknown"
+  return registry[type] || WebinyUnknownElement
+})
 
-// Element settings and data processing
-const elementSettings = computed(() => props.element.data?.settings || {});
-const elementData = computed(() => props.element.data || {});
+// Settings/data
+const elementSettings = computed(() => element.value.data?.settings || {})
+const elementData = computed(() => element.value.data || {})
 
-// Generate element classes
+// Classes
 const elementClasses = computed(() => {
-  const classes = ["webiny-pb-element", `webiny-element-${props.element.type}`];
-
+  const classes = ["webiny-pb-element", `webiny-element-${element.value.type}`]
   if (elementSettings.value.className) {
-    classes.push(elementSettings.value.className);
+    classes.push(elementSettings.value.className)
   }
+  return classes.join(" ")
+})
 
-  if (elementSettings.value.margin) {
-    classes.push(`margin-${elementSettings.value.margin}`);
-  }
-
-  if (elementSettings.value.padding) {
-    classes.push(`padding-${elementSettings.value.padding}`);
-  }
-
-  return classes.join(" ");
-});
-
-// Generate element inline styles
+// Styles
 const elementStyles = computed(() => {
-  const styles = {};
+  const styles = {}
 
-  if (elementSettings.value.background) {
-    const bg = elementSettings.value.background;
-    if (bg.color) {
-      styles.backgroundColor = bg.color;
+  // Background
+  const bg = elementSettings.value.background
+  if (bg) {
+    if (bg.color) styles.backgroundColor = bg.color
+    if (bg.image?.src) {
+      styles.backgroundImage = `url(${bg.image.src})`
+      styles.backgroundSize = bg.image.sizing || "cover"
+      styles.backgroundPosition = bg.image.position || "center"
     }
-    if (bg.image) {
-      styles.backgroundImage = `url(${bg.image.src})`;
-      styles.backgroundSize = bg.image.sizing || "cover";
-      styles.backgroundPosition = bg.image.position || "center";
+  }
+
+  // Width/height
+  const width = elementSettings.value.width?.desktop?.value
+  if (width) styles.width = width
+  const height = elementSettings.value.height?.desktop?.value
+  if (height) styles.height = height
+
+  // Margin
+  const margin = elementSettings.value.margin?.desktop
+  if (margin) {
+    if (margin.all) styles.margin = margin.all
+    else {
+      if (margin.top) styles.marginTop = margin.top
+      if (margin.right) styles.marginRight = margin.right
+      if (margin.bottom) styles.marginBottom = margin.bottom
+      if (margin.left) styles.marginLeft = margin.left
     }
   }
 
-  if (elementSettings.value.width) {
-    styles.width = elementSettings.value.width;
+  // Padding
+  const padding = elementSettings.value.padding?.desktop
+  if (padding) {
+    if (padding.all) styles.padding = padding.all
+    else {
+      if (padding.top) styles.paddingTop = padding.top
+      if (padding.right) styles.paddingRight = padding.right
+      if (padding.bottom) styles.paddingBottom = padding.bottom
+      if (padding.left) styles.paddingLeft = padding.left
+    }
   }
 
-  if (elementSettings.value.height) {
-    styles.height = elementSettings.value.height;
-  }
-
+  // Custom CSS passthrough
   if (elementSettings.value.css) {
-    Object.assign(styles, elementSettings.value.css);
+    Object.assign(styles, elementSettings.value.css)
   }
 
-  return styles;
-});
+  return styles
+})
 
-// Element props to pass to child component
+// Props for child
 const elementProps = computed(() => ({
-  element: props.element,
+  element: element.value,
   data: elementData.value,
   settings: elementSettings.value
-}));
+}))
 </script>
 
 <style scoped>
 .webiny-pb-element {
   position: relative;
 }
-
-/* Margin utilities */
-.margin-xs { margin: 0.25rem; }
-.margin-sm { margin: 0.5rem; }
-.margin-md { margin: 1rem; }
-.margin-lg { margin: 1.5rem; }
-.margin-xl { margin: 2rem; }
-
-/* Padding utilities */
-.padding-xs { padding: 0.25rem; }
-.padding-sm { padding: 0.5rem; }
-.padding-md { padding: 1rem; }
-.padding-lg { padding: 1.5rem; }
-.padding-xl { padding: 2rem; }
 </style>

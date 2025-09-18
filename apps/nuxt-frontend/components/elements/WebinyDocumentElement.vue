@@ -14,6 +14,8 @@ const props = defineProps<{
   element: any;
 }>();
 
+const element = toRef(props, "element");
+
 // Only descend into children; never render the same element again.
 const children = computed(() =>
   Array.isArray(props.element?.elements) ? props.element.elements : []

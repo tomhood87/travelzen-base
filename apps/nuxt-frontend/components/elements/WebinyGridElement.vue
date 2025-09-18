@@ -37,10 +37,10 @@ const children = computed(() => {
 
 // Grid wrapper classes
 const gridClasses = computed(() => {
-  const classes: string[] = ["grid"]
+  const classes: string[] = ["grid", "row"]
 
   // Default gap
-  classes.push("gap-4")
+  // classes.push("gap-4")
 
   // Alignment (flexbox style but we translate into Tailwind classes)
   const alignH = element.value.data?.settings?.horizontalAlignFlex?.desktop
