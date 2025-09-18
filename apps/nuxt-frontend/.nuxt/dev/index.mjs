@@ -1124,7 +1124,22 @@ const plugins = [
 _qWBEXLx2zzDW8FMXpUdqd4CQgzk8ouxwXPDLemVimVg
 ];
 
-const assets = {};
+const assets = {
+  "/index.mjs": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1454e-5Hfe1Oh7Cs5tZj/d+lZYN7QDovA\"",
+    "mtime": "2025-09-18T11:06:45.548Z",
+    "size": 83278,
+    "path": "index.mjs"
+  },
+  "/index.mjs.map": {
+    "type": "application/json",
+    "etag": "\"4bdeb-zrnGw6IkGK/1+EJpnjd34BhWH+s\"",
+    "mtime": "2025-09-18T11:06:45.548Z",
+    "size": 310763,
+    "path": "index.mjs.map"
+  }
+};
 
 function readAsset (id) {
   const serverDir = dirname$1(fileURLToPath(globalThis._importMeta_.url));
@@ -2035,7 +2050,9 @@ const _slug_ = defineEventHandler(async (event) => {
             settings {
               seo {
                 title
+                description
                 meta {
+                  name
                   content
                 }
               }

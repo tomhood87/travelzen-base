@@ -40,7 +40,9 @@ const _slug_ = defineEventHandler(async (event) => {
             settings {
               seo {
                 title
+                description
                 meta {
+                  name
                   content
                 }
               }

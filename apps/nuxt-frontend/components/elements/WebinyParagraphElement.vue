@@ -5,9 +5,14 @@
     :style="styleString"
     v-html="content"
   />
+  <!-- Debug -->
+  <!-- <pre>{{ element }}</pre> -->
 </template>
 
 <script setup lang="ts">
+import { toRef, computed } from "vue";
+import { useInlineStyle } from "@/composables/useInlineStyle";
+
 const props = defineProps({
   element: {
     type: Object,
@@ -26,38 +31,50 @@ const props = defineProps({
 const element = toRef(props, 'element')
 const data = toRef(props, 'data')
 const settings = toRef(props, 'settings')
+
+// Inline styles
 const { styleString } = useInlineStyle(JSON.stringify(settings.value))
 
-const extractText = function extractText(jsonString: string) {
+/**
+ * Extract formatted HTML text from Lexical JSON.
+ */
+function extractHtml(jsonString: string) {
   try {
-    // Parse the outer JSON
-    const outer = JSON.parse(jsonString);
+    const outer = JSON.parse(jsonString)
+    const inner = JSON.parse(outer.text.data.text)
 
-    // Parse the nested JSON inside text.data.text
-    const inner = JSON.parse(outer.text.data.text);
+    function renderNode(node: any): string {
+      if (node.type === "text") {
+        let txt = node.text || ""
 
-    // Collect all text nodes recursively
-    function collectText(node: any) {
-      if (node.text) return node.text;
-      if (node.children) return node.children.map(collectText).join(" ");
-      return "";
+        // Lexical format bitmask:
+        // 1 = bold, 2 = italic, 4 = underline, 8 = strikethrough
+        if (node.format & 1) txt = `<strong>${txt}</strong>`
+        if (node.format & 2) txt = `<em>${txt}</em>`
+        if (node.format & 4) txt = `<u>${txt}</u>`
+        if (node.format & 8) txt = `<s>${txt}</s>`
+
+        return txt
+      }
+      if (node.children) {
+        return node.children.map(renderNode).join("")
+      }
+      return ""
     }
 
-    return collectText(inner.root);
+    return renderNode(inner.root)
   } catch (e) {
-    console.error("Could not extract text", e);
-    return "";
+    console.error("Could not extract formatted text", e)
+    return ""
   }
 }
 
-// Extract text content
-const content = computed(() => {
-  return extractText(JSON.stringify(data.value))
-})
+// Extract formatted HTML
+const content = computed(() => extractHtml(JSON.stringify(data.value)))
 
 // Typography settings
 const paragraphClasses = computed(() => {
-  const classes = []
+  const classes: string[] = []
 
   const typography = settings.value.typography
   if (typography) {
@@ -72,7 +89,7 @@ const paragraphClasses = computed(() => {
     }
   }
 
-  return classes.join(' ')
+  return classes.join(" ")
 })
 </script>
 

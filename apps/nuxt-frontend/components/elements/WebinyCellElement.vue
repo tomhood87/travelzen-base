@@ -1,5 +1,5 @@
 <template>
-  <div :class="cellClasses" :style="cellStyles">
+  <div :class="cellClasses">
     <WebinyElementRenderer
       v-for="child in children"
       :key="child.id"

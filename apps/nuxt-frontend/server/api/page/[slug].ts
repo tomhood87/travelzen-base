@@ -45,7 +45,9 @@ export default defineEventHandler(async (event) => {
             settings {
               seo {
                 title
+                description
                 meta {
+                  name
                   content
                 }
               }
