@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: [
-    '~/assets/scss/bootstrap-custom.scss'
+    '~/assets/scss/bootstrap-custom.scss', '~/assets/scss/template.scss'
   ],
   runtimeConfig: {
     webinyMainApi: process.env.WEBINY_MAIN_API,

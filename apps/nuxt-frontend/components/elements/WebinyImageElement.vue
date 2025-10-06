@@ -124,23 +124,4 @@ const onImageError = () => {
 }
 </script>
 
-<style scoped>
-.webiny-image-element {
-  display: block;
-}
-
-.webiny-image {
-  max-width: 100%;
-  height: auto;
-}
-
-.webiny-image-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px;
-  background-color: #f1f5f9;
-  border: 2px dashed #cbd5e1;
-  border-radius: 0.5rem;
-}
-</style>
+<style></style>

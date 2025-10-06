@@ -36,11 +36,4 @@ const elementData = computed(() => {
 })
 </script>
 
-<style scoped>
-.webiny-unknown-element {
-  min-height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-</style>
+<style></style>

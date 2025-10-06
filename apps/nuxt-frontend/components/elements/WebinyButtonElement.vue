@@ -115,6 +115,7 @@ const buttonWrapperStyles = computed(() => {
 // Button classes
 const buttonClasses = computed(() => {
   const classes = [
+    "mz-btn",
     "webiny-button",
     "inline-flex",
     "items-center",
@@ -176,14 +177,4 @@ const handleClick = (event: MouseEvent) => {
 }
 </script>
 
-<style scoped>
-.webiny-button-element {
-  display: flex;
-  width: 100%;
-}
-.webiny-button {
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-}
-</style>
+<style></style>

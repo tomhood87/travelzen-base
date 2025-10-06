@@ -76,7 +76,7 @@ const gridStyles = computed(() => {
   const s = element.value.data?.settings
 
   // Width
-  const width = s?.width?.desktop?.value
+  const width = "100%"
   if (width) styles.width = width
 
   // Margin
@@ -111,10 +111,4 @@ const gridStyles = computed(() => {
 })
 </script>
 
-<style scoped>
-.webiny-grid-element {
-  width: 100%;
-  display: flex; /* Webiny grid is really flex-based */
-  flex-wrap: wrap;
-}
-</style>
+<style></style>

@@ -27,7 +27,7 @@ export default defineEventHandler(async () => {
             body: JSON.stringify({ query })
         })
 
-        if (!res || !res.data || !res.data.listMenus) {
+        if (!res) {
             console.error('Invalid CMS response', res)
             throw createError({ statusCode: 500, statusMessage: 'Invalid CMS response' })
         }

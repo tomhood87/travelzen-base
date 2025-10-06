@@ -77,9 +77,4 @@ const cellStyles = computed(() => {
 })
 </script>
 
-<style scoped>
-.webiny-cell-element {
-  display: flex;
-  flex-direction: column;
-}
-</style>
+<style></style>

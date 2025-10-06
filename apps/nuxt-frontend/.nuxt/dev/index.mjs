@@ -1124,22 +1124,7 @@ const plugins = [
 _qWBEXLx2zzDW8FMXpUdqd4CQgzk8ouxwXPDLemVimVg
 ];
 
-const assets = {
-  "/index.mjs": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"1454e-5Hfe1Oh7Cs5tZj/d+lZYN7QDovA\"",
-    "mtime": "2025-09-18T11:06:45.548Z",
-    "size": 83278,
-    "path": "index.mjs"
-  },
-  "/index.mjs.map": {
-    "type": "application/json",
-    "etag": "\"4bdeb-zrnGw6IkGK/1+EJpnjd34BhWH+s\"",
-    "mtime": "2025-09-18T11:06:45.548Z",
-    "size": 310763,
-    "path": "index.mjs.map"
-  }
-};
+const assets = {};
 
 function readAsset (id) {
   const serverDir = dirname$1(fileURLToPath(globalThis._importMeta_.url));
@@ -1546,16 +1531,20 @@ async function getIslandContext(event) {
   return ctx;
 }
 
+const _lazy_i4Mxih = () => Promise.resolve().then(function () { return block_get$1; });
 const _lazy_fxHN3b = () => Promise.resolve().then(function () { return menu_get$1; });
 const _lazy_50Obcq = () => Promise.resolve().then(function () { return model_get$1; });
 const _lazy_NFzJre = () => Promise.resolve().then(function () { return _slug_$1; });
+const _lazy_Lbi4df = () => Promise.resolve().then(function () { return siteSettings_get$1; });
 const _lazy_kS1hU_ = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
   { route: '', handler: _Ockwbx, lazy: false, middleware: true, method: undefined },
+  { route: '/api/block', handler: _lazy_i4Mxih, lazy: true, middleware: false, method: "get" },
   { route: '/api/menu', handler: _lazy_fxHN3b, lazy: true, middleware: false, method: "get" },
   { route: '/api/model', handler: _lazy_50Obcq, lazy: true, middleware: false, method: "get" },
   { route: '/api/page/:slug', handler: _lazy_NFzJre, lazy: true, middleware: false, method: undefined },
+  { route: '/api/site-settings', handler: _lazy_Lbi4df, lazy: true, middleware: false, method: "get" },
   { route: '/__nuxt_error', handler: _lazy_kS1hU_, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_kS1hU_, lazy: true, middleware: false, method: undefined }
@@ -1889,6 +1878,45 @@ const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   default: styles
 }, Symbol.toStringTag, { value: 'Module' }));
 
+const block_get = defineEventHandler(async (event) => {
+  var _a, _b, _c, _d;
+  const config = useRuntimeConfig();
+  const slug = "main-menu";
+  const query = `
+    query {
+        pageBuilder {
+            getBlock(id: "68cbeb3e9d1c910002b24e95") {
+              data {
+                id
+                name
+                content
+                settings
+              }
+            }
+          }
+    }
+  `;
+  try {
+    const res = await $fetch(config.webinyMainApi, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${config.webinyMainApiKey}`
+      },
+      body: { query, variables: { slug } }
+    });
+    return ((_d = (_c = (_b = (_a = res == null ? void 0 : res.data) == null ? void 0 : _a.pageBuilder) == null ? void 0 : _b.getMenu) == null ? void 0 : _c.data) == null ? void 0 : _d.items) || [];
+  } catch (err) {
+    console.error("CMS fetch failed", err);
+    throw createError({ statusCode: 500, statusMessage: "CMS fetch failed" });
+  }
+});
+
+const block_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: block_get
+}, Symbol.toStringTag, { value: 'Module' }));
+
 function toSlug(title) {
   return title.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
 }
@@ -2002,7 +2030,7 @@ const model_get = defineEventHandler(async () => {
       },
       body: JSON.stringify({ query })
     });
-    if (!res || !res.data || !res.data.listMenus) {
+    if (!res) {
       console.error("Invalid CMS response", res);
       throw createError({ statusCode: 500, statusMessage: "Invalid CMS response" });
     }
@@ -2085,6 +2113,68 @@ const _slug_ = defineEventHandler(async (event) => {
 const _slug_$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: _slug_
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const siteSettings_get = defineEventHandler(async (event) => {
+  var _a, _b, _c;
+  const config = useRuntimeConfig();
+  const query = `
+    query {
+         pageBuilder {
+            getSettings {
+                data {
+                    name
+                    websiteUrl
+                    websitePreviewUrl
+                    logo {
+                      id
+                      src
+                    }
+                    favicon {
+                      id
+                      src
+                    }
+                    htmlTags {
+                      header
+                      footer
+                    }
+                    pages {
+                      home
+                      notFound
+                    }
+                    social {
+                      facebook
+                      twitter
+                    }
+                    # Custom fields you added
+                    primaryfont
+                    secondaryfont
+                    primarycolour
+                    secondarycolour
+                }
+            }
+         }
+    }
+  `;
+  try {
+    const res = await $fetch(config.webinyMainApi, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${config.webinyMainApiKey}`
+      },
+      body: { query, variables: {} }
+    });
+    return ((_c = (_b = (_a = res == null ? void 0 : res.data) == null ? void 0 : _a.pageBuilder) == null ? void 0 : _b.getSettings) == null ? void 0 : _c.data) || [];
+  } catch (err) {
+    console.error("CMS fetch failed", err);
+    throw createError({ statusCode: 500, statusMessage: "CMS fetch failed" });
+  }
+});
+
+const siteSettings_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: siteSettings_get
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {

@@ -1,7 +1,10 @@
-// This file is automatically updated via scaffolding utilities.
-// Learn more about extensions: https://webiny.link/extensions
 import React from "react";
+import { Extensions as ThemeConfigurationExtension } from "theme-configuration";
 
 export const Extensions = () => {
-    return <></>;
+    return (
+        <>
+            <ThemeConfigurationExtension />
+        </>
+    );
 };

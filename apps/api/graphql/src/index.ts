@@ -41,10 +41,33 @@ import { createLogger } from "@webiny/api-log";
 // Imports plugins created via scaffolding utilities.
 import scaffoldsPlugins from "./plugins/scaffolds";
 import { extensions } from "./extensions";
+import { GraphQLSchemaPlugin } from "@webiny/handler-graphql";
 
 const debug = process.env.DEBUG === "true";
 
 const documentClient = getDocumentClient();
+
+const customConfigurationSchema = new GraphQLSchemaPlugin({
+    typeDefs: /* GraphQL */ `
+        extend type PbSettings {
+            network1: String
+            network2: String
+            primarycolour: String
+            secondarycolour: String
+            primaryfont: String
+            secondaryfont: String
+        }
+
+        extend input PbSettingsInput {
+            network1: String
+            network2: String
+            primarycolour: String
+            secondarycolour: String
+            primaryfont: String
+            secondaryfont: String
+        }
+    `
+});
 
 export const handler = createHandler({
     plugins: [
@@ -111,7 +134,8 @@ export const handler = createHandler({
         createAcoHcmsContext(),
         createHcmsTasks(),
         scaffoldsPlugins(),
-        extensions()
+        extensions(),
+        customConfigurationSchema
     ],
     debug
 });

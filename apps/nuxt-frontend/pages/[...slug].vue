@@ -9,7 +9,6 @@
       :content="page.content"
       :settings="page.settings"
     />
-    {{ page.settings }}
   </div>
 
   <div v-else class="flex items-center justify-center min-h-screen">

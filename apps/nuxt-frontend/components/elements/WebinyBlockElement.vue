@@ -90,7 +90,7 @@ const blockClasses = computed(() => {
   }
 
   // Center fixed-width blocks
-  const width = element.value.data?.settings?.width?.desktop?.value
+  const width = "100%"
   if (width && width !== "100%") {
     classes.push("mx-auto")
   }
@@ -103,7 +103,7 @@ const blockStyles = computed(() => {
   const styles: Record<string, string> = {}
 
   // Width
-  const width = element.value.data?.settings?.width?.desktop?.value
+  const width = "100%"
   if (width) styles.width = width
 
   // Margin
@@ -146,10 +146,4 @@ const blockStyles = computed(() => {
 })
 </script>
 
-<style scoped>
-.webiny-block-element {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-</style>
+<style></style>

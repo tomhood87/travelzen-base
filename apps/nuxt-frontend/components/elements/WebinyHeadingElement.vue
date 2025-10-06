@@ -104,9 +104,4 @@ const headingStyles = computed(() => {
   </component>
 </template>
 
-<style scoped>
-.webiny-heading-element {
-  margin: 0;
-  font-weight: 600;
-}
-</style>
+<style></style>

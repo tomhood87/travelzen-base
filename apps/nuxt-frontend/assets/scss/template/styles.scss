@@ -1,0 +1,26 @@
+/*==============================================================================
+// File:        _styles.scss
+// Package:     Webiny / Mr Zen
+// Synopsis:    Main styles for the website - SASS
+//============================================================================*/
+
+/*------------------------------------------------------------------------------
+// Layout Styles
+//----------------------------------------------------------------------------*/
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricprecision;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+main {
+  padding: 0;
+}
+
+body {
+  background: #EEE;
+}

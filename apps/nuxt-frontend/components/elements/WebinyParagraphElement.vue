@@ -93,9 +93,4 @@ const paragraphClasses = computed(() => {
 })
 </script>
 
-<style scoped>
-.webiny-paragraph-element {
-  margin: 0;
-  line-height: 1.6;
-}
-</style>
+<style></style>

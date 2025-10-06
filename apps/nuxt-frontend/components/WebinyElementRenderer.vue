@@ -76,7 +76,7 @@ const elementStyles = computed(() => {
   }
 
   // Width/height
-  const width = elementSettings.value.width?.desktop?.value
+  const width = "100%"
   if (width) styles.width = width
   const height = elementSettings.value.height?.desktop?.value
   if (height) styles.height = height
@@ -121,8 +121,4 @@ const elementProps = computed(() => ({
 }))
 </script>
 
-<style scoped>
-.webiny-pb-element {
-  position: relative;
-}
-</style>
+<style></style>

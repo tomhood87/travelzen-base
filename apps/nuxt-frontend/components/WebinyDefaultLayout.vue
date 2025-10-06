@@ -51,19 +51,4 @@ const hasHeader = computed(() => headerElements.value.length > 0)
 const hasFooter = computed(() => footerElements.value.length > 0)
 </script>
 
-<style scoped>
-.webiny-default-layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.webiny-layout-main {
-  flex: 1;
-}
-
-.webiny-layout-header,
-.webiny-layout-footer {
-  width: 100%;
-}
-</style>
+<style></style>
