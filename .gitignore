@@ -2,7 +2,7 @@
 .idea
 .webpack
 .webiny
-.ouput
+.output
 .nuxt
 .tmp/
 .env
