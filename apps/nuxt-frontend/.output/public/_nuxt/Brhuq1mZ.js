@@ -1,1 +1,0 @@
-import{_ as t}from"./CsRWDakD.js";import a from"./BktC43-B.js";import{e as s,c as r,o as n,b as e,a as c,B as m}from"#entry";import"./5-HShlcB.js";import"./CQFwKbzV.js";const _={class:"mz-layout-default"},i={class:"flex-1 container mx-auto p-6"},x=s({__name:"default",setup(l){return(o,p)=>(n(),r("div",_,[e(t),c("main",i,[m(o.$slots,"default")]),e(a)]))}});export{x as default};

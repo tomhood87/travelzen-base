@@ -30,3 +30,6 @@ cypress.json
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+apps/nuxt-frontend/.output
+apps/nuxt-frontend/.nuxt

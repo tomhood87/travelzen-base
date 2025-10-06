@@ -14,14 +14,19 @@ const data = toRef(props, "data")
 const settings = toRef(props, "settings")
 
 /**
- * Extract text from Webiny's Lexical JSON string.
+ * Extract text and tag from Webiny's Lexical JSON.
  */
-function extractLexicalText(jsonString: string): string {
+function parseLexical(jsonString: string): { text: string; tag?: string } {
   try {
     const parsed = JSON.parse(jsonString)
 
+    let tag: string | undefined
+
     function walk(node: any): string {
       if (!node) return ""
+      if (node.type === "heading-element" && node.tag) {
+        tag = node.tag
+      }
       if (typeof node.text === "string") return node.text
       if (Array.isArray(node.children)) {
         return node.children.map(walk).join(" ")
@@ -29,28 +34,28 @@ function extractLexicalText(jsonString: string): string {
       return ""
     }
 
-    return walk(parsed.root)
+    const text = walk(parsed.root)
+    return { text, tag }
   } catch (e) {
     console.error("Failed to parse heading text", e)
-    return ""
+    return { text: "", tag: undefined }
   }
 }
 
-// The inner lexical JSON is stored as a string
-const content = computed(() => {
-  const textData =
+const lexicalData = computed(() => {
+  const raw =
     data.value?.text?.data?.text ||
     element.value?.data?.text?.data?.text ||
     ""
-
-  return typeof textData === "string"
-    ? extractLexicalText(textData)
-    : ""
+  return parseLexical(typeof raw === "string" ? raw : "")
 })
 
-// Heading tag (defaults to h1 if missing)
+const content = computed(() => lexicalData.value.text)
+
+// Prefer the tag from Lexical; fallback to Webiny’s `desktop.tag`
 const headingTag = computed(() => {
   return (
+    lexicalData.value.tag ||
     data.value?.text?.desktop?.tag ||
     element.value?.data?.text?.desktop?.tag ||
     "h1"
@@ -103,5 +108,3 @@ const headingStyles = computed(() => {
     {{ content }}
   </component>
 </template>
-
-<style></style>
