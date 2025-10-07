@@ -1,30 +1,14 @@
-<template>
-  <div v-if="page" class="webiny-pb-layout">
-    <WebinyLayoutRenderer
-      :layout="layout"
-      :content="page.content"
-      :settings="page.settings"
-    />
-  </div>
-  <div v-else-if="loading" class="flex items-center justify-center min-h-screen">
-    <div class="text-lg text-neutral-600">Loading page...</div>
-  </div>
-  <div v-else class="flex items-center justify-center min-h-screen">
-    <div class="text-center">
-      <h1 class="text-2xl font-bold text-neutral-900 mb-2">Page Not Found</h1>
-      <p class="text-neutral-600">The requested page could not be loaded.</p>
-    </div>
-  </div>
-</template>
-
-<script setup>
+<script setup lang="ts">
+// Properties and events.
+//
 const props = defineProps({
   path: {
     type: String,
     required: true
   }
 })
-
+// Main variables.
+//
 const { getPage } = useWebinyApi()
 const page = ref(null)
 const loading = ref(true)
@@ -90,3 +74,24 @@ watch(() => props.path, () => {
 // SSR data fetching
 await callOnce(fetchPage)
 </script>
+
+<template>
+  <div v-if="page" class="webiny-pb-layout">
+    <WebinyLayoutRenderer
+      :layout="layout"
+      :content="page.content"
+      :settings="page.settings"
+    />
+  </div>
+  <div v-else-if="loading" class="flex items-center justify-center min-h-screen">
+    <div class="text-lg text-neutral-600">Loading page...</div>
+  </div>
+  <div v-else class="flex items-center justify-center min-h-screen">
+    <div class="text-center">
+      <h1 class="text-2xl font-bold text-neutral-900 mb-2">Page Not Found</h1>
+      <p class="text-neutral-600">The requested page could not be loaded.</p>
+    </div>
+  </div>
+</template>
+
+<style></style>

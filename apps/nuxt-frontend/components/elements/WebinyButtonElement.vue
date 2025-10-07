@@ -1,22 +1,6 @@
-<template>
-  <div class="webiny-button-element" :class="buttonWrapperClasses" :style="buttonWrapperStyles">
-    <component
-      :is="buttonComponent"
-      :to="buttonLink"
-      :href="buttonHref"
-      :target="linkTarget"
-      :class="buttonClasses"
-      :style="buttonStyles"
-      @click="handleClick"
-    >
-      {{ buttonText }}
-    </component>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { toRef, computed } from "vue"
-
+// Properties and events.
+//
 const props = defineProps({
   element: {
     type: Object,
@@ -31,7 +15,8 @@ const props = defineProps({
     default: () => ({})
   }
 })
-
+// Main variables.
+//
 const element = toRef(props, "element")
 const data = toRef(props, "data")
 const settings = toRef(props, "settings")
@@ -176,5 +161,21 @@ const handleClick = (event: MouseEvent) => {
   }
 }
 </script>
+
+<template>
+  <div class="webiny-button-element" :class="buttonWrapperClasses" :style="buttonWrapperStyles">
+    <component
+      :is="buttonComponent"
+      :to="buttonLink"
+      :href="buttonHref"
+      :target="linkTarget"
+      :class="buttonClasses"
+      :style="buttonStyles"
+      @click="handleClick"
+    >
+      {{ buttonText }}
+    </component>
+  </div>
+</template>
 
 <style></style>

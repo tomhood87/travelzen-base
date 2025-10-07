@@ -1,14 +1,6 @@
-<template>
-  <div class="webiny-static-layout">
-    <WebinyElementRenderer
-      v-if="content"
-      :element="content"
-      :is-root="true"
-    />
-  </div>
-</template>
-
-<script setup>
+<script setup lang="ts">
+// Properties and events.
+//
 const props = defineProps({
   content: {
     type: Object,
@@ -20,5 +12,15 @@ const props = defineProps({
   }
 })
 </script>
+
+<template>
+  <div class="webiny-static-layout">
+    <WebinyElementRenderer
+      v-if="content"
+      :element="content"
+      :is-root="true"
+    />
+  </div>
+</template>
 
 <style></style>

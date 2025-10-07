@@ -1,16 +1,6 @@
-<template>
-  <div class="webiny-block-element" :class="blockClasses" :style="blockStyles">
-    <WebinyElementRenderer
-      v-for="child in children"
-      :key="child.id"
-      :element="child"
-    />
-  </div>
-</template>
-
 <script setup lang="ts">
-import { toRef, computed } from "vue"
-
+// Properties and events.
+//
 const props = defineProps({
   element: {
     type: Object,
@@ -25,15 +15,16 @@ const props = defineProps({
     default: () => ({})
   }
 })
-
+// Main variables.
+//
 const element = toRef(props, "element")
 const data = toRef(props, "data")
 const settings = toRef(props, "settings")
-
-// Extract child elements
+// Extract child elements.
+//
 const children = computed(() => element.value.elements || [])
-
-// Mapping helpers
+// Mapping helpers.
+//
 const mapH: Record<string, string> = {
   "flex-start": "justify-start",
   center: "justify-center",
@@ -42,15 +33,14 @@ const mapH: Record<string, string> = {
   "space-around": "justify-around",
   "space-evenly": "justify-evenly"
 }
-
 const mapV: Record<string, string> = {
   "flex-start": "items-start",
   center: "items-center",
   "flex-end": "items-end",
   stretch: "items-stretch"
 }
-
-// Block CSS classes
+// Class management.
+//
 const blockClasses = computed(() => {
   const classes: string[] = ["flex", "flex-col"] // default vertical stacking
 
@@ -145,5 +135,15 @@ const blockStyles = computed(() => {
   return styles
 })
 </script>
+
+<template>
+  <div class="webiny-block-element" :class="blockClasses" :style="blockStyles">
+    <WebinyElementRenderer
+      v-for="child in children"
+      :key="child.id"
+      :element="child"
+    />
+  </div>
+</template>
 
 <style></style>

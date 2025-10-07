@@ -3,6 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "preinstall": "node ./scripts/set-tenant-package.js",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",

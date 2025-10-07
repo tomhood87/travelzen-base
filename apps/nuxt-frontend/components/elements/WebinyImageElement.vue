@@ -1,25 +1,6 @@
-<template>
-  <div class="webiny-image-element" :class="imageWrapperClasses">
-    <img
-      v-if="imageSrc"
-      :src="imageSrc"
-      :alt="imageAlt"
-      :title="imageTitle"
-      :class="imageClasses"
-      class="img-fluid"
-      :style="imageStyles"
-      @load="onImageLoad"
-      @error="onImageError"
-    />
-    <div v-else class="webiny-image-placeholder">
-      <div class="text-neutral-400 text-sm">No image available</div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { toRef, computed } from "vue"
-
+// Properties and events.
+//
 const props = defineProps({
   element: {
     type: Object,
@@ -34,7 +15,8 @@ const props = defineProps({
     default: () => ({})
   }
 })
-
+// Main variables.
+//
 const element = toRef(props, "element")
 const data = toRef(props, "data")
 const settings = toRef(props, "settings")
@@ -123,5 +105,24 @@ const onImageError = () => {
   console.error("Failed to load image:", imageSrc.value)
 }
 </script>
+
+<template>
+  <div class="webiny-image-element" :class="imageWrapperClasses">
+    <img
+      v-if="imageSrc"
+      :src="imageSrc"
+      :alt="imageAlt"
+      :title="imageTitle"
+      :class="imageClasses"
+      class="img-fluid"
+      :style="imageStyles"
+      @load="onImageLoad"
+      @error="onImageError"
+    />
+    <div v-else class="webiny-image-placeholder">
+      <div class="text-neutral-400 text-sm">No image available</div>
+    </div>
+  </div>
+</template>
 
 <style></style>

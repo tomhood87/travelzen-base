@@ -1,38 +1,24 @@
-<template>
-  <component :is="elementComponent" v-bind="elementProps" />
-</template>
-
-<script setup>
-import { computed, toRef } from "vue"
-
-// Import components
-import WebinyDocumentElement from "./elements/WebinyDocumentElement.vue"
-import WebinyBlockElement from "./elements/WebinyBlockElement.vue"
-import WebinyParagraphElement from "./elements/WebinyParagraphElement.vue"
-import WebinyHeadingElement from "./elements/WebinyHeadingElement.vue"
-import WebinyImageElement from "./elements/WebinyImageElement.vue"
-import WebinyGridElement from "./elements/WebinyGridElement.vue"
-import WebinyCellElement from "./elements/WebinyCellElement.vue"
-import WebinyButtonElement from "./elements/WebinyButtonElement.vue"
-import WebinyUnknownElement from "./elements/WebinyUnknownElement.vue"
-
+<script setup lang="ts">
+// Properties and events.
+//
 const props = defineProps({
   element: { type: Object, required: true },
   isRoot: { type: Boolean, default: false }
 })
-
+// Main variables.
+//
 const element = toRef(props, "element")
 
 // Registry
 const registry = {
-  document: WebinyDocumentElement,
-  block: WebinyBlockElement,
-  paragraph: WebinyParagraphElement,
-  heading: WebinyHeadingElement,
-  button: WebinyButtonElement,
-  image: WebinyImageElement,
-  grid: WebinyGridElement,
-  cell: WebinyCellElement
+  document: ElementsWebinyDocumentElement,
+  block: ElementsWebinyBlockElement,
+  paragraph: ElementsWebinyParagraphElement,
+  heading: ElementsWebinyHeadingElement,
+  button: ElementsWebinyButtonElement,
+  image: ElementsWebinyImageElement,
+  grid: ElementsWebinyGridElement,
+  cell: ElementsWebinyCellElement
 }
 
 // Visibility
@@ -44,7 +30,7 @@ const shouldRender = computed(() => {
 // Component
 const elementComponent = computed(() => {
   const type = element.value?.type || "unknown"
-  return registry[type] || WebinyUnknownElement
+  return registry[type] || ElementsWebinyUnknownElement
 })
 
 // Settings/data
@@ -120,5 +106,9 @@ const elementProps = computed(() => ({
   settings: elementSettings.value
 }))
 </script>
+
+<template>
+  <component :is="elementComponent" v-bind="elementProps" />
+</template>
 
 <style></style>

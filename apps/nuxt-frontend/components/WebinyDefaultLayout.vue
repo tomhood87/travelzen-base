@@ -1,3 +1,30 @@
+<script setup lang="ts">
+// Properties and events.
+//
+const props = defineProps({
+  content: {
+    type: Object,
+    required: true
+  },
+  settings: {
+    type: Object,
+    default: () => ({})
+  }
+})
+
+// Extract header and footer elements from layout settings
+const headerElements = computed(() => {
+  return props.settings?.layout?.header?.elements || []
+})
+
+const footerElements = computed(() => {
+  return props.settings?.layout?.footer?.elements || []
+})
+
+const hasHeader = computed(() => headerElements.value.length > 0)
+const hasFooter = computed(() => footerElements.value.length > 0)
+</script>
+
 <template>
   <div class="webiny-default-layout">
     <header v-if="hasHeader" class="webiny-layout-header">
@@ -25,30 +52,5 @@
     </footer>
   </div>
 </template>
-
-<script setup>
-const props = defineProps({
-  content: {
-    type: Object,
-    required: true
-  },
-  settings: {
-    type: Object,
-    default: () => ({})
-  }
-})
-
-// Extract header and footer elements from layout settings
-const headerElements = computed(() => {
-  return props.settings?.layout?.header?.elements || []
-})
-
-const footerElements = computed(() => {
-  return props.settings?.layout?.footer?.elements || []
-})
-
-const hasHeader = computed(() => headerElements.value.length > 0)
-const hasFooter = computed(() => footerElements.value.length > 0)
-</script>
 
 <style></style>

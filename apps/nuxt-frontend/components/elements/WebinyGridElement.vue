@@ -1,16 +1,6 @@
-<template>
-  <div class="webiny-grid-element" :class="gridClasses" :style="gridStyles">
-    <WebinyElementRenderer
-      v-for="child in children"
-      :key="child.id"
-      :element="child"
-    />
-  </div>
-</template>
-
 <script setup lang="ts">
-import { toRef, computed } from "vue"
-
+// Properties and events.
+//
 const props = defineProps({
   element: {
     type: Object,
@@ -25,7 +15,8 @@ const props = defineProps({
     default: () => ({})
   }
 })
-
+// Main variables.
+//
 const element = toRef(props, "element")
 const data = toRef(props, "data")
 const settings = toRef(props, "settings")
@@ -110,5 +101,15 @@ const gridStyles = computed(() => {
   return styles
 })
 </script>
+
+<template>
+  <div class="webiny-grid-element" :class="gridClasses" :style="gridStyles">
+    <WebinyElementRenderer
+      v-for="child in children"
+      :key="child.id"
+      :element="child"
+    />
+  </div>
+</template>
 
 <style></style>

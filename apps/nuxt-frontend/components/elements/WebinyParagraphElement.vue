@@ -1,18 +1,6 @@
-<template>
-  <p
-    class="webiny-paragraph-element"
-    :class="paragraphClasses"
-    :style="styleString"
-    v-html="content"
-  />
-  <!-- Debug -->
-  <!-- <pre>{{ element }}</pre> -->
-</template>
-
 <script setup lang="ts">
-import { toRef, computed } from "vue";
-import { useInlineStyle } from "@/composables/useInlineStyle";
-
+// Properties and events.
+//
 const props = defineProps({
   element: {
     type: Object,
@@ -27,7 +15,8 @@ const props = defineProps({
     default: () => ({})
   }
 })
-
+// Main variables.
+//
 const element = toRef(props, 'element')
 const data = toRef(props, 'data')
 const settings = toRef(props, 'settings')
@@ -92,5 +81,14 @@ const paragraphClasses = computed(() => {
   return classes.join(" ")
 })
 </script>
+
+<template>
+  <p
+    class="webiny-paragraph-element"
+    :class="paragraphClasses"
+    :style="styleString"
+    v-html="content"
+  />
+</template>
 
 <style></style>

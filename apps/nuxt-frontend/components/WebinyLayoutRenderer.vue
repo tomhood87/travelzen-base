@@ -1,22 +1,13 @@
-<template>
-  <component
-    :is="layoutComponent"
-    :content="content"
-    :settings="settings"
-  />
-</template>
-
 <script setup lang="ts">
-import { computed } from "vue";
-import WebinyStaticLayout from "./WebinyStaticLayout.vue";
-import WebinyDefaultLayout from "./WebinyDefaultLayout.vue";
-
+// Properties and events.
+//
 const props = defineProps<{
   layout: string;
   content: Record<string, any>;
   settings?: Record<string, any>;
 }>();
-
+// Main variables.
+//
 const layoutMap = {
   static: WebinyStaticLayout,
   default: WebinyDefaultLayout
@@ -27,3 +18,13 @@ const layoutComponent = computed(() => {
   return layoutMap[key] || WebinyStaticLayout;
 });
 </script>
+
+<template>
+  <component
+    :is="layoutComponent"
+    :content="content"
+    :settings="settings"
+  />
+</template>
+
+<style></style>
