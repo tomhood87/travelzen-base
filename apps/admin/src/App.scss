@@ -15,3 +15,11 @@ $webiny-theme-typography-font-family: "Source Sans Pro";
 
 // Import admin app styles
 @import "~@webiny/app-serverless-cms/styles.scss";
+
+.WebinyLexical__link {
+  color: $webiny-theme-light-primary;
+  text-decoration: none;
+  > * {
+    color: inherit !important;
+  }
+}
