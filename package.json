@@ -18,7 +18,8 @@
 		"@webiny/cli-plugin-workspaces": "5.43.4",
 		"@webiny/cwp-template-aws": "5.43.4",
 		"@webiny/project-utils": "5.43.4",
-		"@webiny/serverless-cms-aws": "5.43.4"
+		"@webiny/serverless-cms-aws": "5.43.4",
+		"dompurify": "^3.2.7"
 	},
 	"keywords": [
 		"aws+dynamodb"
@@ -61,8 +62,7 @@
 			"apps/website",
 			"apps/api/graphql",
 			"packages/*",
-			"extensions/theme",
-			"extensions/themeConfiguration"
+			"extensions/theme"
 		]
 	},
 	"scripts": {
