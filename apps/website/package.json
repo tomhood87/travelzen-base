@@ -18,9 +18,11 @@
 		"core-js": "3.39.0",
 		"cross-fetch": "3.2.0",
 		"graphql": "15.9.0",
+		"raw-html": "1.0.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"regenerator-runtime": "0.13.11",
+		"space-x-element": "1.0.0",
 		"theme": "1.0.0"
 	},
 	"devDependencies": {

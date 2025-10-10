@@ -1,0 +1,18 @@
+{
+  "name": "raw-html",
+  "version": "1.0.0",
+  "keywords": [
+    "webiny-extension",
+    "webiny-extension-type:pbElement"
+  ],
+  "dependencies": {
+    "@webiny/app-page-builder": "5.43.4",
+    "@webiny/app-page-builder-elements": "5.43.4",
+    "@webiny/app-website": "5.43.4",
+    "@webiny/form": "5.43.4",
+    "@webiny/ui": "5.43.4",
+    "@webiny/validation": "5.43.4",
+    "graphql-request": "^6.0.0",
+    "react": "18.2.0"
+  }
+}

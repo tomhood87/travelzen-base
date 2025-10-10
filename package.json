@@ -62,7 +62,9 @@
 			"apps/website",
 			"apps/api/graphql",
 			"packages/*",
-			"extensions/theme"
+			"extensions/theme",
+			"extensions/spaceXElement",
+			"extensions/rawHtml"
 		]
 	},
 	"scripts": {
