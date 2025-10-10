@@ -17,9 +17,13 @@ $webiny-theme-typography-font-family: "Source Sans Pro";
 @import "~@webiny/app-serverless-cms/styles.scss";
 
 .WebinyLexical__link {
-  color: $webiny-theme-light-primary;
+  color: $webiny-theme-light-primary !important;
   text-decoration: none;
   > * {
     color: inherit !important;
   }
+}
+
+pb-block {
+  height: auto !important;
 }
